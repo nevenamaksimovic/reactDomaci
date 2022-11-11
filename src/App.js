@@ -3,6 +3,9 @@ import './App.css';
 import { useState } from 'react';
 import Login from './components/Login';
 import axios from 'axios';
+import Navbar from './components/Navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ClientPage from './components/ClientPage';
 
 axios.defaults.baseURL = 'http://localhost:8000/api'
 
@@ -31,7 +34,13 @@ function App() {
   }
   return (
     <div className="main">
+      <BrowserRouter>
+        <Navbar />
 
+        <Routes>
+          <Route path='/client' element={(<ClientPage />)} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
