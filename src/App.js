@@ -6,6 +6,7 @@ import axios from 'axios';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ClientPage from './components/ClientPage';
+import RequestsPage from './components/RequestsPage';
 
 axios.defaults.baseURL = 'http://localhost:8000/api'
 
@@ -39,6 +40,7 @@ function App() {
 
         <Routes>
           <Route path='/client' element={(<ClientPage />)} />
+          <Route path='/' element={(<RequestsPage />)} />
         </Routes>
       </BrowserRouter>
     </div>

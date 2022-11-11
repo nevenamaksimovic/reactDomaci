@@ -76,3 +76,4 @@ export const FormSelect = ({ name, options, label }) => {
 
 Form.Input = FormInput;
 Form.Button = FormButton;
+Form.Select = FormSelect
