@@ -35,7 +35,8 @@ export default function ClientPage() {
                             })
                             .map(client => {
                                 return (
-                                    <tr key={client.oid}>
+                                    <tr key={client.id}>
+                                        <td>{client.id}</td>
                                         <td>{client.name}</td>
                                         <td>{client.email}</td>
                                         <td>{client.phone}</td>

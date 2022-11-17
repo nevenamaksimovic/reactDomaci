@@ -14,12 +14,10 @@ export default function RequestsPage() {
         axios.get('/credits').then(res => {
             setCredits(res.data);
         })
-    }, [])
-    useEffect(() => {
         axios.get('/credit-requests').then(res => {
             setRequests(res.data);
         })
-    }, []);
+    }, [])
 
     return (
         <div className='container mt-3 bg-light pt-3'>
@@ -41,8 +39,8 @@ export default function RequestsPage() {
                                     return (
                                         <tr key={element.id}>
                                             <td>{element.id}</td>
-                                            <td>{element.client.email}</td>
                                             <td>{element.credit.id}</td>
+                                            <td>{element.client.email}</td>
                                             <td>{element.amount}</td>
                                             <td>{element.period}</td>
                                             <button
@@ -92,8 +90,8 @@ export default function RequestsPage() {
                                 }
                             })}
                         />
-                        <Form.Input name='amount' type='number' />
-                        <Form.Input name='period' type='number' />
+                        <Form.Input name='amount' type='number' label='Amount' required />
+                        <Form.Input name='period' type='number' label='Period' required />
                         <Form.Button>Create</Form.Button>
                     </Form>
                 </div>

@@ -28,14 +28,14 @@ export default function Form({ onSubmit, children }) {
 }
 
 
-export const FormInput = ({ name, className, label, ...rest }) => {
+export const FormInput = ({ name, label, ...rest }) => {
     const { formState, onChange } = useContext(FormContext);
     return (
         <div className='form-group'>
             <label >{label}</label>
             <input
                 {...rest}
-                className={'form-control' + (className || '')}
+                className='form-control'
                 value={formState[name] || ''}
                 onChange={e => {
                     onChange(name, e.currentTarget.value);
@@ -53,12 +53,12 @@ export const FormButton = ({ children, ...rest }) => {
     )
 }
 
-export const FormSelect = ({ name, options, label }) => {
+export const FormSelect = ({ name, options, label, ...rest }) => {
     const { formState, onChange } = useContext(FormContext);
     return (
         <div className='form-group'>
             <label >{label}</label>
-            <select className='form-control' value={formState[name] || 0}
+            <select {...rest} className='form-control' value={formState[name] || 0}
                 onChange={e => {
                     onChange(name, e.currentTarget.value);
                 }}>

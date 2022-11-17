@@ -1,4 +1,6 @@
 .main {
   background-image: url('https://images.moneycontrol.com/static-mcnews/2021/06/Bank-representational-shutterstock.jpg?impolicy=website&width=770&height=431');
   background-size: cover;
+  height: 100vh;
+  overflow-y: auto;
 }
